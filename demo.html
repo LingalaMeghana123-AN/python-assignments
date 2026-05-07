@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {
+  color: blue;
+  font-size: 16px;
+}
+.highlight {
+  background-color: yellow;
+  color: black;
+}
+#main-title {
+  color: red;
+  text-align: center;
+}
+h1, h2, p {
+  color: green;
+  font-family: Arial;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+div p {
+  color: purple;
+}
+.outer > p {
+  color: orange;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+input[type="text"] {
+  border: 2px solid blue;
+}
+.challenge-title {
+  color: darkblue;
+}
+
+#challenge-btn {
+  background-color: lightgray;
+  font-size: 16px;
+}
+
+#challenge-btn:hover {
+  background-color: black;
+  color: white;
+}
+</style>
+</head>
+<body>
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+<p>Paragraph 3</p>
+<h1 class="highlight">Heading Highlight</h1>
+<p class="highlight">Paragraph Highlight</p>
+<p>Normal Paragraph</p>
+<h1 id="main-title">Main Title</h1>
+<p>Paragraph A</p>
+<p>Paragraph B</p>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<p>Paragraph Text</p>
+<div>
+  <p>Inside Div 1</p>
+  <p>Inside Div 2</p>
+</div>
+<p>Outside Div</p>
+<div class="outer">
+  <p>Direct Child Paragraph</p>
+  <div>
+    <p>Nested Paragraph</p>
+  </div>
+</div>
+<button>Hover Me</button>
+<br><br>
+<input type="text" placeholder="Text input">
+<input type="password" placeholder="Password input">
+<h1 class="challenge-title">Mini Challenge</h1>
+<p>This is a styled paragraph.</p>
+<button id="challenge-btn">Click Me</button>
+</body>
+</html>
