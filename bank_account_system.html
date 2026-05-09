@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account System</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container{
+            width: 350px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        input{
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: darkblue;
+        }
+
+        #message{
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Bank Account System</h2>
+
+    <input type="text" id="name" placeholder="Enter Account Holder Name">
+
+    <input type="number" id="amount" placeholder="Enter Amount">
+
+    <button onclick="deposit()">Deposit</button>
+
+    <button onclick="withdraw()" style="margin-top:10px;">
+        Withdraw
+    </button>
+
+    <h3 id="balance">Balance: ₹0</h3>
+
+    <p id="message"></p>
+
+</div>
+
+<script>
+
+    let totalBalance = 0;
+
+    function deposit(){
+
+        const name = document.getElementById("name").value;
+        const amount = parseInt(document.getElementById("amount").value);
+
+        const message = document.getElementById("message");
+
+        if(name === "" || isNaN(amount) || amount <= 0){
+
+            message.innerText = "Please enter valid details";
+            message.style.color = "red";
+            return;
+        }
+
+        totalBalance += amount;
+
+        document.getElementById("balance").innerText =
+            "Balance: ₹" + totalBalance;
+
+        message.innerText = "Amount Deposited Successfully";
+        message.style.color = "green";
+    }
+
+    function withdraw(){
+
+        const amount = parseInt(document.getElementById("amount").value);
+
+        const message = document.getElementById("message");
+
+        if(isNaN(amount) || amount <= 0){
+
+            message.innerText = "Enter valid withdrawal amount";
+            message.style.color = "red";
+            return;
+        }
+
+        if(amount > totalBalance){
+
+            message.innerText = "Insufficient Balance";
+            message.style.color = "red";
+            return;
+        }
+
+        totalBalance -= amount;
+
+        document.getElementById("balance").innerText =
+            "Balance: ₹" + totalBalance;
+
+        message.innerText = "Withdrawal Successful";
+        message.style.color = "green";
+    }
+
+</script>
+
+</body>
+</html>
